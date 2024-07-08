@@ -25,12 +25,20 @@ public class RadialBulletController : MonoBehaviour
 
             // Create vectors.
             Vector3 projectileVector = new Vector3(projectileDirXPosition, projectileDirYPosition, 0);
-            Vector3 projectileMoveDirection = (projectileVector - startPoint).normalized * -projectileSpeed;
+            Vector3 projectileMoveDirection = (projectileVector - this.transform.position).normalized * -projectileSpeed;
 
             // Create game objects.
+            
             GameObject tmpObj = Instantiate(ProjectilePrefab, this.transform.position, Quaternion.identity);
             tmpObj.GetComponent<Rigidbody>().velocity = new Vector3(projectileMoveDirection.x, projectileMoveDirection.y, 0);
-
+            
+            /*
+            Instantiate(ProjectilePrefab, this.transform.position, Quaternion.identity);
+            ProjectilePrefab.GetComponent<Bullet>().speed = projectileSpeed;
+            ProjectilePrefab.GetComponent<Bullet>().lifetime = 2;
+            ProjectilePrefab.GetComponent<Bullet>().Setup(_shootDir);
+            ProjectilePrefab.transform.rotation = transform.rotation;
+            */
             // Destory the gameobject after 10 seconds.
             Destroy(tmpObj, 10F);
 

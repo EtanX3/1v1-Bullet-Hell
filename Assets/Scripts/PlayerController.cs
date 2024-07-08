@@ -60,6 +60,11 @@ public class PlayerController : MonoBehaviour
         controller.Move(move * Time.deltaTime * playerSpeed);
         controller.Move(playerVelocity * Time.deltaTime);
 
+        //bind player movement to camera bounds
+        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+        pos.x = Mathf.Clamp01(pos.x);
+        pos.y = Mathf.Clamp01(pos.y);
+        transform.position = Camera.main.ViewportToWorldPoint(pos);
     }
 
     //how to set up the attack stuffs: scriptable object that holds fields for attack1, 2, etc.

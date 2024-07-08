@@ -15,7 +15,7 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] public SpawnerType _spawnerType;
     [SerializeField] private float fireRate = 1f;
 
-    private GameObject spawnedBullet;
+    private GameObject ProjectilePrefab;
     private float timer = 0f;
     public bool firing;
 
@@ -23,11 +23,11 @@ public class BulletSpawner : MonoBehaviour
     {
         if(bullet)
         {
-            spawnedBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-            spawnedBullet.GetComponent<Bullet>().speed = speed;
-            spawnedBullet.GetComponent<Bullet>().lifetime = bulletlifetime;
-            spawnedBullet.GetComponent<Bullet>().Setup(shootDir);
-            spawnedBullet.transform.rotation = transform.rotation;
+            ProjectilePrefab = Instantiate(bullet, transform.position, Quaternion.identity);
+            ProjectilePrefab.GetComponent<Bullet>().speed = speed;
+            ProjectilePrefab.GetComponent<Bullet>().lifetime = bulletlifetime;
+            ProjectilePrefab.GetComponent<Bullet>().Setup(shootDir);
+            ProjectilePrefab.transform.rotation = transform.rotation;
 
             timer += Time.deltaTime;
             if (_spawnerType == SpawnerType.Spin) transform.eulerAngles = new Vector3(0f, 0f, transform.eulerAngles.z + 1f);
