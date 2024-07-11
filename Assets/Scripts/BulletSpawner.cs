@@ -19,11 +19,12 @@ public class BulletSpawner : MonoBehaviour
     private float timer = 0f;
     public bool firing;
 
-    public void Fire(Vector3 shootDir)
+    public void Fire(Vector3 shootDir, GameObject _parent)
     {
         if(bullet)
         {
             ProjectilePrefab = Instantiate(bullet, transform.position, Quaternion.identity);
+            ProjectilePrefab.GetComponent<Bullet>().parent = _parent;
             ProjectilePrefab.GetComponent<Bullet>().speed = speed;
             ProjectilePrefab.GetComponent<Bullet>().lifetime = bulletlifetime;
             ProjectilePrefab.GetComponent<Bullet>().Setup(shootDir);
@@ -33,7 +34,7 @@ public class BulletSpawner : MonoBehaviour
             if (_spawnerType == SpawnerType.Spin) transform.eulerAngles = new Vector3(0f, 0f, transform.eulerAngles.z + 1f);
             if (timer >= fireRate)
             {
-                Fire(shootDir);
+                Fire(shootDir, _parent);
                 timer = 0;
             }
         }

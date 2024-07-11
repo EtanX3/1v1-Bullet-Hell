@@ -7,6 +7,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Health")]
+    public int maxHealth;
+    public int currentHealth;
+    public HealthBar healthBar;
+
+
     public Transform _projectile1;
     public Transform _projectile2;
     private CharacterController controller;
@@ -23,6 +29,12 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
     }
+    private void Start()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 movement = context.ReadValue<Vector2>();
@@ -41,7 +53,7 @@ public class PlayerController : MonoBehaviour
             Vector3 shootDir = ((transform.position - reticle.transform.position)* -1).normalized;
 
             spawner._spawnerType = BulletSpawner.SpawnerType.Straight;
-            spawner.Fire(shootDir);
+            spawner.Fire(shootDir, this.gameObject);
         }
     }
     public void OnAttack2(InputAction.CallbackContext context)
@@ -53,6 +65,16 @@ public class PlayerController : MonoBehaviour
             radialAttack.SpawnProjectile(5);
         }
 
+    }
+
+    public void TakeDamage(int _damage)
+    {
+        currentHealth -= _damage;
+        healthBar.SetHealth(currentHealth);
+        if(currentHealth <= 0)
+        {
+            Debug.Log("I Died");
+        }
     }
 
     void Update()

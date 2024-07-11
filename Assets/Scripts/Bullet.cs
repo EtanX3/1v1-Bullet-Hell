@@ -11,6 +11,8 @@ public class Bullet : MonoBehaviour
     private Vector3 shootDir;
     private Vector2 spawnPoint;
     private float timer = 0f;
+    public int damage;
+    public GameObject parent;
 
     private void Start()
     {
@@ -29,6 +31,18 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
         transform.position += shootDir * speed * Time.deltaTime;
-       
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject != parent)
+        {
+            if (other.GetComponent<PlayerController>())
+            {
+                {
+                    other.GetComponent<PlayerController>().TakeDamage(damage);
+                }
+            }
+        }
     }
 }

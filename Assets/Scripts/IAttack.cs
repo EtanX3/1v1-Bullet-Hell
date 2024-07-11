@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IAttack : MonoBehaviour
+public interface IAttack
 {
-    // Start is called before the first frame update
-    void Start()
+   public void DealDamage(int _amount)
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
