@@ -12,12 +12,12 @@ public static void Initialize(GameObject defaultProjPrefab, GameObject defaultMi
 
     public static AttackTemplate OneForward() => new AttackTemplate(
         projectilePrefab: _defaultProjPrefab,
-        numberOfProj: 1,
+        numberOfProj: 2,
         projSpeed: 9f,
         spawnRadius: 1f);
     public static AttackTemplate Three360() => new AttackTemplate(
         projectilePrefab: _defaultProjPrefab,
-        numberOfProj: 3,
+        numberOfProj: 8,
         projSpeed: 9f,
         spawnRadius: 1f);
 }

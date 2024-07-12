@@ -143,6 +143,7 @@ MonoBehaviour:
   numberOfProjectiles: 3
   projectileSpeed: 5
   ProjectilePrefab: {fileID: 3365126699644661957, guid: 657a9bd0fd012194a901f3b447e1e3e4, type: 3}
+  aimArrow: {fileID: 1848657634}
 --- !u!1001 &368017476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -426,6 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f89806908258394aa3265f763f2707b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _aim: {fileID: 1848657634}
 --- !u!1 &1797810966 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5109883614287216992, guid: 281bf0fa84ae77248af2576bb7fc41a9, type: 3}
@@ -445,6 +447,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab_default: {fileID: 3365126699644661957, guid: 657a9bd0fd012194a901f3b447e1e3e4, type: 3}
   Prefab_homingMissile: {fileID: 5089499889114411820, guid: 86f0c11be1ff05144909e51e14dfc5ff, type: 3}
+--- !u!1 &1848657634 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9030207387001007387, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+  m_PrefabInstance: {fileID: 2112786458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2112786458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -557,7 +564,9 @@ PrefabInstance:
       propertyPath: radialAttack
       value: 
       objectReference: {fileID: 249915741}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3039995824601084524, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+    - {fileID: 5775644753159544507, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

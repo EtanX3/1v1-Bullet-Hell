@@ -10,22 +10,24 @@ public class RadialBulletController : MonoBehaviour
     [Header("Private Variables")]
     private Vector3 startPoint;                 // Starting position of the bullet.
     private const float radius = 1F;            // Help us find the move direction.
+    [SerializeField] GameObject aimArrow;
 
     // Spawns x number of projectiles.
     public void SpawnProjectile(int _numberOfProjectiles)
     {
         float angleStep = 360f / _numberOfProjectiles;
         float angle = 0f;
+        //angle should be the difference between the two player obj's
 
         for (int i = 0; i <=_numberOfProjectiles -1; i++)
         {
             // Direction calculations.
-            float projectileDirXPosition = this.transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
-            float projectileDirYPosition = this.transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
+            float projectileDirXPosition = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
+            float projectileDirYPosition = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
 
             // Create vectors.
             Vector3 projectileVector = new Vector3(projectileDirXPosition, projectileDirYPosition, 0);
-            Vector3 projectileMoveDirection = (projectileVector - this.transform.position).normalized * -projectileSpeed;
+            Vector3 projectileMoveDirection = (projectileVector - transform.position).normalized * -projectileSpeed;
 
             // Create game objects.
             
