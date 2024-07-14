@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 8361296104314075648}
   - component: {fileID: 8822732420615740014}
   - component: {fileID: 8491588373906380365}
-  - component: {fileID: 5775644753159544507}
+  - component: {fileID: 1093274954242781636}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -352,6 +352,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f8c857a5-1109-4b1b-b812-978a55c97b74
     m_ActionName: PlayerControls/Attack2[/Keyboard/2,/XInputControllerWindows/buttonNorth,/DualShock4GamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8822732420615740014}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnAttack3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b571fec6-4d3e-4000-b861-8f95f3658bab
+    m_ActionName: PlayerControls/Attack3[/Keyboard/3,/XInputControllerWindows/buttonSouth,/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8822732420615740014}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnAttack4
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 44d97a5b-9952-4879-91b8-5cca6e90454d
+    m_ActionName: PlayerControls/Attack4[/Keyboard/4,/XInputControllerWindows/buttonEast,/DualShock4GamepadHID/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
@@ -377,7 +409,8 @@ MonoBehaviour:
   playerSpeed: 2
   reticle: {fileID: 7450032674254382506}
   spawner: {fileID: 3052487163256164707}
-  radialAttack: {fileID: 5775644753159544507}
+  radialAttack: {fileID: 0}
+  attacks: {fileID: 1093274954242781636}
 --- !u!143 &8491588373906380365
 CharacterController:
   m_ObjectHideFlags: 0
@@ -404,7 +437,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5775644753159544507
+--- !u!114 &1093274954242781636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -413,13 +446,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3736402639794946566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b267d2b8135d3ca4d84db7c2728eb310, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f89806908258394aa3265f763f2707b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfProjectiles: 5
-  projectileSpeed: 5
-  ProjectilePrefab: {fileID: 3365126699644661957, guid: 657a9bd0fd012194a901f3b447e1e3e4, type: 3}
-  aimArrow: {fileID: 9030207387001007387}
+  _aim: {fileID: 9030207387001007387}
+  aimpos: {x: 0, y: 0, z: 0}
 --- !u!1 &4549740231012283498
 GameObject:
   m_ObjectHideFlags: 0

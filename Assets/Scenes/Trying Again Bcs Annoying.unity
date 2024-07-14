@@ -410,24 +410,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1797810970}
   m_SourcePrefab: {fileID: 100100000, guid: 281bf0fa84ae77248af2576bb7fc41a9, type: 3}
---- !u!1 &1469865537 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3736402639794946566, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+--- !u!114 &1469865540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8822732420615740014, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
   m_PrefabInstance: {fileID: 2112786458}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1469865538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469865537}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f89806908258394aa3265f763f2707b, type: 3}
+  m_Script: {fileID: 11500000, guid: 609cce59ff4b6ff4fb9411e271b08230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _aim: {fileID: 1848657634}
 --- !u!1 &1797810966 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5109883614287216992, guid: 281bf0fa84ae77248af2576bb7fc41a9, type: 3}
@@ -560,6 +553,54 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8361296104314075648, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361296104314075648, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: b571fec6-4d3e-4000-b861-8f95f3658bab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361296104314075648, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 44d97a5b-9952-4879-91b8-5cca6e90454d
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361296104314075648, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: PlayerControls/Attack3[/Keyboard/3,/XInputControllerWindows/buttonSouth,/DualShock4GamepadHID/buttonSouth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361296104314075648, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: PlayerControls/Attack4[/Keyboard/4,/XInputControllerWindows/buttonEast,/DualShock4GamepadHID/buttonEast]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361296104314075648, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361296104314075648, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361296104314075648, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361296104314075648, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361296104314075648, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1469865540}
+    - target: {fileID: 8361296104314075648, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361296104314075648, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8822732420615740014, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
       propertyPath: radialAttack
       value: 
@@ -570,9 +611,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3736402639794946566, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1469865538}
     - targetCorrespondingSourceObject: {fileID: 7197555713065820780, guid: e32e6e5abe975ee46964d2b4f241de1c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 249915741}

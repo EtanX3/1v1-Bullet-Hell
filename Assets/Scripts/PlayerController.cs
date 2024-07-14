@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public Transform reticle;
     public BulletSpawner spawner;
     public RadialBulletController radialAttack;
+    public NewBehaviourScript attacks;
 
     private void Awake()
     {
@@ -50,10 +51,11 @@ public class PlayerController : MonoBehaviour
             Vector3 shootDir = ((transform.position - bulletTransform) * -1).normalized;
             bulletTransform.GetComponent<Bullet>().Setup(shootDir);
             */
-            Vector3 shootDir = ((transform.position - reticle.transform.position)* -1).normalized;
+           // Vector3 shootDir = ((transform.position - reticle.transform.position)* -1).normalized;
 
-            spawner._spawnerType = BulletSpawner.SpawnerType.Straight;
-            spawner.Fire(shootDir, this.gameObject);
+           // spawner._spawnerType = BulletSpawner.SpawnerType.Straight;
+           // spawner.Fire(shootDir, this.gameObject);
+            attacks.Fire(AttackLibrary.OneForward());
         }
     }
     public void OnAttack2(InputAction.CallbackContext context)
@@ -61,12 +63,34 @@ public class PlayerController : MonoBehaviour
         attacking = context.action.triggered;
         if (attacking)
         {
-            Vector3 shootDir = ((transform.position - reticle.transform.position) * -1).normalized;
-            radialAttack.SpawnProjectile(5);
+            //Vector3 shootDir = ((transform.position - reticle.transform.position) * -1).normalized;
+            //radialAttack.SpawnProjectile(5);
+            attacks.Fire(AttackLibrary.Eight360());
         }
 
     }
+    public void OnAttack3(InputAction.CallbackContext context)
+    {
+        attacking = context.action.triggered;
+        if (attacking)
+        {
+            //Vector3 shootDir = ((transform.position - reticle.transform.position) * -1).normalized;
+            //radialAttack.SpawnProjectile(5);
+            attacks.Fire(AttackLibrary.Shotgun());
+        }
 
+    }
+    public void OnAttack4(InputAction.CallbackContext context)
+    {
+        attacking = context.action.triggered;
+        if (attacking)
+        {
+            //Vector3 shootDir = ((transform.position - reticle.transform.position) * -1).normalized;
+            //radialAttack.SpawnProjectile(5);
+            attacks.Fire(AttackLibrary.SlowSpin());
+        }
+
+    }
     public void TakeDamage(int _damage)
     {
         currentHealth -= _damage;

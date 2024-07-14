@@ -53,6 +53,24 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack3"",
+                    ""type"": ""Button"",
+                    ""id"": ""b571fec6-4d3e-4000-b861-8f95f3658bab"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack4"",
+                    ""type"": ""Button"",
+                    ""id"": ""44d97a5b-9952-4879-91b8-5cca6e90454d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -165,6 +183,50 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""action"": ""Attack2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9004fbfd-6d0e-4305-8943-66ec861ec6f8"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Attack3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b5098408-a87c-4748-9cae-9c3d6c25f5fc"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Attack3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7e2088a-1c3a-4a33-b426-272fedb54607"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Attack4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96ca7850-de37-420b-b301-c49847016a25"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Attack4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -204,6 +266,8 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         m_PlayerControls_Move = m_PlayerControls.FindAction("Move", throwIfNotFound: true);
         m_PlayerControls_Attack1 = m_PlayerControls.FindAction("Attack1", throwIfNotFound: true);
         m_PlayerControls_Attack2 = m_PlayerControls.FindAction("Attack2", throwIfNotFound: true);
+        m_PlayerControls_Attack3 = m_PlayerControls.FindAction("Attack3", throwIfNotFound: true);
+        m_PlayerControls_Attack4 = m_PlayerControls.FindAction("Attack4", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -268,6 +332,8 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerControls_Move;
     private readonly InputAction m_PlayerControls_Attack1;
     private readonly InputAction m_PlayerControls_Attack2;
+    private readonly InputAction m_PlayerControls_Attack3;
+    private readonly InputAction m_PlayerControls_Attack4;
     public struct PlayerControlsActions
     {
         private @NewControls m_Wrapper;
@@ -275,6 +341,8 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_PlayerControls_Move;
         public InputAction @Attack1 => m_Wrapper.m_PlayerControls_Attack1;
         public InputAction @Attack2 => m_Wrapper.m_PlayerControls_Attack2;
+        public InputAction @Attack3 => m_Wrapper.m_PlayerControls_Attack3;
+        public InputAction @Attack4 => m_Wrapper.m_PlayerControls_Attack4;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -293,6 +361,12 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @Attack2.started += instance.OnAttack2;
             @Attack2.performed += instance.OnAttack2;
             @Attack2.canceled += instance.OnAttack2;
+            @Attack3.started += instance.OnAttack3;
+            @Attack3.performed += instance.OnAttack3;
+            @Attack3.canceled += instance.OnAttack3;
+            @Attack4.started += instance.OnAttack4;
+            @Attack4.performed += instance.OnAttack4;
+            @Attack4.canceled += instance.OnAttack4;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -306,6 +380,12 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @Attack2.started -= instance.OnAttack2;
             @Attack2.performed -= instance.OnAttack2;
             @Attack2.canceled -= instance.OnAttack2;
+            @Attack3.started -= instance.OnAttack3;
+            @Attack3.performed -= instance.OnAttack3;
+            @Attack3.canceled -= instance.OnAttack3;
+            @Attack4.started -= instance.OnAttack4;
+            @Attack4.performed -= instance.OnAttack4;
+            @Attack4.canceled -= instance.OnAttack4;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -346,5 +426,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnAttack1(InputAction.CallbackContext context);
         void OnAttack2(InputAction.CallbackContext context);
+        void OnAttack3(InputAction.CallbackContext context);
+        void OnAttack4(InputAction.CallbackContext context);
     }
 }

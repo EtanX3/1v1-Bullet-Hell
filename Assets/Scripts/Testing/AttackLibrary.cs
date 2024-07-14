@@ -12,12 +12,31 @@ public static void Initialize(GameObject defaultProjPrefab, GameObject defaultMi
 
     public static AttackTemplate OneForward() => new AttackTemplate(
         projectilePrefab: _defaultProjPrefab,
-        numberOfProj: 2,
-        projSpeed: 9f,
-        spawnRadius: 1f);
-    public static AttackTemplate Three360() => new AttackTemplate(
+        numberOfProj: 1,
+        projSpeed: 5f,
+        spawnRadius: 1f,
+        angle: 0f,
+        angleStep: 360);
+    public static AttackTemplate Eight360() => new AttackTemplate(
         projectilePrefab: _defaultProjPrefab,
         numberOfProj: 8,
-        projSpeed: 9f,
-        spawnRadius: 1f);
+        projSpeed: 6f,
+        spawnRadius: 1f,
+        angle: 22.5f,
+        angleStep: 360);
+
+    public static AttackTemplate SlowSpin() => new AttackTemplate(
+        projectilePrefab: _defaultProjPrefab,
+        numberOfProj: 6,
+        projSpeed: 2,
+        spawnRadius: 1f,
+        angle: 0,
+        angleStep: 360);
+    public static AttackTemplate Shotgun() => new AttackTemplate(
+        projectilePrefab: _defaultProjPrefab,
+        numberOfProj: 5,
+        projSpeed: 3,
+        spawnRadius: 1f,
+        angle: 0f,
+        angleStep: 90);
 }
